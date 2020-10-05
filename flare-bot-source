@@ -1,0 +1,44 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.once('ready', () => {
+    console.log('Ready!');
+
+const helpembed = {
+  "title": "Bot Commands",
+  "description": "Help Section for the Flare Bot -",
+  "color": 16711680,
+  "footer": {
+    "text": "Contact Me! ѕнαмяσ¢к#8289"
+  },
+  "fields": [
+    {
+      "name": "Activities",
+      "value": "!flare help activities"
+    },
+    {
+      "name": "Server Commands",
+      "value": "!flare help server"
+    },
+    {
+      "name": "Bot Help",
+      "value": "!flare help bot"
+    }
+	]
+};
+
+client.on('message', message => {
+    if (message.content === '!flare test') {
+        message.channel.send('The bot is working fine!');
+    }
+    if (message.content === '!flare help') {
+        message.channel.send({ embed: helpembed });
+    }
+
+});
+
+
+
+});
+
+client.login("NzYyMTU4NjMwMTYyMTM3MTMw.X3lFiQ.lm3QRpMN1EMRaqu662qUuOuBByg");
